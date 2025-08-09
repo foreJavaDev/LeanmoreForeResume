@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Software Engineer & AI Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3B82F6',
+                        'secondary': '#10B981',
+                        'accent': '#F59E0B',
+                        'bright-pink': '#EC4899',
+                        'bright-purple': '#8B5CF6',
+                        'bright-orange': '#F97316',
+                        'bright-green': '#22C55E',
+                        'bright-blue': '#06B6D4',
+                        'bright-yellow': '#EAB308'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-primary to-bright-purple bg-clip-text text-transparent">
+                            Leanmore Fore
+                        </h1>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" x-transition class="md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-primary">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-primary">Projects</a>
+                <a href="#education" class="block px-3 py-2 text-gray-700 hover:text-primary">Education</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <div class="mb-8">
+                    <div class="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-bright-blue to-bright-purple p-1">
+                        <img src="lenny.png" alt="Leanmore Fore" class="w-full h-full rounded-full object-cover">
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+                    <span class="bg-gradient-to-r from-primary via-bright-purple to-bright-pink bg-clip-text text-transparent">
+                        Software Engineer
+                    </span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+                    Web Development & AI Enthusiast
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Passionate about creating innovative web solutions and implementing AI technologies. 
+                    Specializing in full-stack development with Java, Python, and modern frameworks.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="bg-gradient-to-r from-primary to-bright-purple text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    About <span class="bg-gradient-to-r from-secondary to-bright-green bg-clip-text text-transparent">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-bright-green mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Aspiring Software Engineer</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a passionate software engineer with a strong foundation in web development and artificial intelligence. 
+                        Currently pursuing my Bachelor's degree in Computer Science at the University of the People, USA, 
+                        I bring both academic knowledge and practical experience to every project.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Based in Johannesburg, South Africa, I specialize in creating robust web applications using modern 
+                        technologies like Spring Boot, Django, and implementing AI solutions with Python and PyTorch. 
+                        My goal is to bridge the gap between traditional web development and cutting-edge AI implementation.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-gradient-to-r from-bright-blue to-bright-purple text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Web Development
+                        </div>
+                        <div class="bg-gradient-to-r from-bright-green to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Machine Learning
+                        </div>
+                        <div class="bg-gradient-to-r from-bright-orange to-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            AI Implementation
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-primary to-bright-blue p-6 rounded-xl text-white text-center transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-code text-3xl mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Clean Code</h4>
+                        <p class="text-sm opacity-90">Writing maintainable and scalable solutions</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-secondary to-bright-green p-6 rounded-xl text-white text-center transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-brain text-3xl mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">AI Innovation</h4>
+                        <p class="text-sm opacity-90">Implementing intelligent solutions</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-bright-purple to-bright-pink p-6 rounded-xl text-white text-center transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-mobile-alt text-3xl mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Responsive</h4>
+                        <p class="text-sm opacity-90">Mobile-first approach</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-accent to-bright-orange p-6 rounded-xl text-white text-center transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-rocket text-3xl mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Performance</h4>
+                        <p class="text-sm opacity-90">Optimized solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    My <span class="bg-gradient-to-r from-bright-purple to-bright-pink bg-clip-text text-transparent">Skills</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-bright-purple to-bright-pink mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-bright-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Programming Languages</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Java</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-bright-blue h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Python</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-bright-green h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">JavaScript</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-bright-yellow h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">HTML & CSS</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-bright-orange to-bright-pink h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-secondary to-bright-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-layer-group text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Frameworks</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Spring Boot</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-bright-green h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Django</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-bright-blue h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Tailwind CSS</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-bright-blue to-bright-purple h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Thymeleaf</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-bright-orange h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Tools -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-bright-purple to-bright-pink rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">AI & Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">PyTorch</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-bright-purple to-bright-pink h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">MySQL</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-bright-green h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Microservices</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-bright-blue h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">ResNet</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-bright-orange h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Control -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-bright-purple to-bright-pink rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">DevOps & Databases</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Git</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-bright-purple to-bright-pink h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Docker</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-bright-green h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Postman</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-bright-blue h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Kubernates</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent to-bright-orange h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">MySQL</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-bright-purple to-bright-pink h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Featured <span class="bg-gradient-to-r from-accent to-bright-orange bg-clip-text text-transparent">Projects</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-accent to-bright-orange mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- StudyPoint Project -->
+                <div class="bg-gradient-to-br from-primary to-bright-blue p-1 rounded-xl">
+                    <div class="bg-white p-6 rounded-xl h-full">
+                        <div class="mb-4">
+                            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-graduation-cap text-4xl text-gray-400"></i>
+                                <!-- Add your project image here -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">StudyPoint School System</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive school management system with payment integration and secure authentication.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Java</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Spring Boot</span>
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Thymeleaf</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">MySQL</span>
+                                <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">Tailwind</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Paystack payment gateway integration</li>
+                                <li>• JWT authentication & authorization</li>
+                                <li>• Gmail SMTP for notifications</li>
+                                <li>• Responsive design with Tailwind CSS</li>
+                            </ul>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://studypoint.co.za" target="_blank" class="bg-gradient-to-r from-primary to-bright-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300 flex-1 text-center">
+                                Live Demo
+                            </a>
+                            <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML Project -->
+                <div class="bg-gradient-to-br from-secondary to-bright-green p-1 rounded-xl">
+                    <div class="bg-white p-6 rounded-xl h-full">
+                        <div class="mb-4">
+                            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-4xl text-gray-400"></i>
+                                <!-- Add your project image here -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Deep Learning Image Classification</h3>
+                            <p class="text-gray-600 mb-4">
+                                Advanced image classification system using deep learning with ResNet architecture.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Python</span>
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">PyTorch</span>
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">ResNet</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Deep Learning</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• ResNet architecture implementation</li>
+                                <li>• High accuracy image classification</li>
+                                <li>• PyTorch framework optimization</li>
+                                <li>• Data preprocessing & augmentation</li>
+                            </ul>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" class="bg-gradient-to-r from-secondary to-bright-green text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300 flex-1 text-center">
+                                View Project
+                            </a>
+                            <a href="#" class="border border-secondary text-secondary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-secondary hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Microservices Project -->
+                <div class="bg-gradient-to-br from-bright-purple to-bright-pink p-1 rounded-xl">
+                    <div class="bg-white p-6 rounded-xl h-full">
+                        <div class="mb-4">
+                            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-video text-4xl text-gray-400"></i>
+                                <!-- Add your project image here -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Movie Streaming Microservices</h3>
+                            <p class="text-gray-600 mb-4">
+                                Scalable microservices architecture for movie streaming platform with cloud integration.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Java</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Spring Boot</span>
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Zipkin</span>
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Netflix Server</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Cloud</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Microservices architecture design</li>
+                                <li>• Zipkin distributed tracing</li>
+                                <li>• Netflix server integration</li>
+                                <li>• Cloud deployment & scaling</li>
+                            </ul>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" class="bg-gradient-to-r from-bright-purple to-bright-pink text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300 flex-1 text-center">
+                                View Project
+                            </a>
+                            <a href="#" class="border border-bright-purple text-bright-purple px-4 py-2 rounded-lg text-sm font-semibold hover:bg-bright-purple hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Websites -->
+                <div class="bg-gradient-to-br from-accent to-bright-orange p-1 rounded-xl">
+                    <div class="bg-white p-6 rounded-xl h-full">
+                        <div class="mb-4">
+                            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-building text-4xl text-gray-400"></i>
+                                <!-- Add your project image here -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cown Construction</h3>
+                            <p class="text-gray-600 mb-4">
+                                Professional construction company website with modern design and responsive layout.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">CSS</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Responsive</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Modern responsive design</li>
+                                <li>• SEO optimized</li>
+                                <li>• Fast loading performance</li>
+                                <li>• Mobile-first approach</li>
+                            </ul>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://cown-construction.com" target="_blank" class="bg-gradient-to-r from-accent to-bright-orange text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300 flex-1 text-center">
+                                Live Site
+                            </a>
+                            <a href="#" class="border border-accent text-accent px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C&L Tronics -->
+                <div class="bg-gradient-to-br from-bright-blue to-bright-purple p-1 rounded-xl">
+                    <div class="bg-white p-6 rounded-xl h-full">
+                        <div class="mb-4">
+                            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-microchip text-4xl text-gray-400"></i>
+                                <!-- Add your project image here -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">C&L Tronics</h3>
+                            <p class="text-gray-600 mb-4">
+                                Electronics company website showcasing products and services with clean design.
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">CSS</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Static Site</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Product showcase design</li>
+                                <li>• Interactive components</li>
+                                <li>• Cross-browser compatibility</li>
+                                <li>• Clean user interface</li>
+                            </ul>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://c&l-tronics.com" target="_blank" class="bg-gradient-to-r from-bright-blue to-bright-purple text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300 flex-1 text-center">
+                                Live Site
+                            </a>
+                            <a href="#" class="border border-bright-blue text-bright-blue px-4 py-2 rounded-lg text-sm font-semibold hover:bg-bright-blue hover:text-white transition-all duration-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    My <span class="bg-gradient-to-r from-bright-green to-secondary bg-clip-text text-transparent">Education</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-bright-green to-secondary mx-auto"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-bright-green to-secondary"></div>
+                    
+                    <!-- University Education -->
+                    <div class="relative flex items-center justify-between mb-16">
+                        <div class="w-5/12">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-bright-green to-secondary rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-graduation-cap text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Bachelor's Degree</h3>
+                                        <p class="text-sm text-gray-600">2020 - Present</p>
+                                    </div>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Computer Science</h4>
+                                <p class="text-gray-600 mb-3">University of the People, USA</p>
+                                <p class="text-sm text-gray-500">
+                                    Pursuing comprehensive education in computer science fundamentals, 
+                                    software engineering principles, and modern development practices.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-bright-green rounded-full border-4 border-white shadow-lg"></div>
+                        
+                        <div class="w-5/12"></div>
+                    </div>
+
+                    <!-- A Level Education -->
+                    <div class="relative flex items-center justify-between">
+                        <div class="w-5/12"></div>
+                        
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg"></div>
+                        
+                        <div class="w-5/12">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-secondary to-bright-blue rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-certificate text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">A Level Certificate</h3>
+                                        <p class="text-sm text-gray-600">Completed</p>
+                                    </div>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Advanced Level Education</h4>
+                                <p class="text-gray-600 mb-3">Zimbabwe</p>
+                                <p class="text-sm text-gray-500 mb-4">
+                                    Completed advanced level education with focus on mathematics, 
+                                    sciences, and analytical thinking skills.
+                                </p>
+                                <div class="mt-4">
+                                    <a href="A'level.pdf" target="_blank" 
+                                       class="inline-flex items-center bg-gradient-to-r from-secondary to-bright-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                                        <i class="fas fa-download mr-2"></i>
+                                        View Certificate
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications and Skills -->
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-bright-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Web Development</h3>
+                    <p class="text-gray-600 text-sm">
+                        Self-taught expertise in full-stack web development with modern frameworks and best practices.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary to-bright-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Machine Learning</h3>
+                    <p class="text-gray-600 text-sm">
+                        Practical experience in ML algorithms, deep learning, and AI implementation using Python and PyTorch.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-bright-purple to-bright-pink rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-project-diagram text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">System Architecture</h3>
+                    <p class="text-gray-600 text-sm">
+                        Experience in designing scalable microservices architectures and cloud-based solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Get In <span class="bg-gradient-to-r from-primary to-bright-blue bg-clip-text text-transparent">Touch</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-bright-blue mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="flex items-center p-6 bg-gradient-to-r from-primary/10 to-bright-blue/10 rounded-xl">
+                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-bright-blue rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Email</h3>
+                            <a href="mailto:foredev.it@gmail.com" class="text-primary hover:text-bright-blue transition-colors duration-300">
+                                foredev.it@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 bg-gradient-to-r from-secondary/10 to-bright-green/10 rounded-xl">
+                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-bright-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fab fa-whatsapp text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">WhatsApp / Call</h3>
+                            <a href="tel:0053293657" class="text-secondary hover:text-bright-green transition-colors duration-300">
+                                053 293 657
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 bg-gradient-to-r from-bright-purple/10 to-bright-pink/10 rounded-xl">
+                        <div class="w-12 h-12 bg-gradient-to-r from-bright-purple to-bright-pink rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Location</h3>
+                            <p class="text-gray-600">Johannesburg, South Africa</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 bg-gradient-to-r from-accent/10 to-bright-orange/10 rounded-xl">
+                        <div class="w-12 h-12 bg-gradient-to-r from-accent to-bright-orange rounded-full flex items-center justify-center mr-4">
+                            <i class="fab fa-github text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">GitHub</h3>
+                            <a href="https://github.com/forejavaguru" target="_blank" class="text-accent hover:text-bright-orange transition-colors duration-300">
+                                github.com/forejavaguru
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-xl">
+                    <form class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-primary to-bright-blue text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-bright-blue bg-clip-text text-transparent">
+                        Portfolio
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Passionate software engineer specializing in web development and AI implementation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/forejavaguru" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="mailto:foredev.it@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/27053293657" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Technologies</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Java & Spring Boot</p>
+                        <p>Python & Django</p>
+                        <p>JavaScript & Modern Frameworks</p>
+                        <p>Machine Learning & AI</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Portfolio. Built with passion and modern web technologies.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
